@@ -245,9 +245,6 @@ ul{display: flex;
       z-index: 1;
       border-bottom: 1px solid #d701eb;
     }
-    .menu:hover{
-      background-color:#080610;
-    }
     
     .menu > div {
       display: flex;
