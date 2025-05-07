@@ -472,3 +472,30 @@ ul{display: flex;
       transform: scale(1);
     }
   }
+
+  /* ---------------------------------Curses--------------------------------- */
+  .grid-section-curses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+.gallery-images-curses {
+  overflow: hidden;
+  max-width: var(--container-images);
+  max-height: var(--container-images);
+  background-color: rgba(128, 128, 128, 0.207);
+  border-radius: 40px;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid green;
+  border-radius: 15px;
+}
+
+.gallery-image-curses img {
+  height: 600px;
+  height: 250px;
+  transition: all 300ms ease-in-out;
+  border-radius: 20px;
+}
