@@ -390,12 +390,13 @@ header {
 
 .image-background {
 background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;  
+  background-size: 300% 300%;
+  animation: gradientMove 15s ease infinite;
+  height: 710px;  
 }
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  70% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
