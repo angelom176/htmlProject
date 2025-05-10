@@ -341,7 +341,7 @@ header {
   cursor: not-allowed;
   opacity: 0.75;
 }
-
+/*====================BTT=======================*/
 .back-to-top {
   display: flex;
   justify-content: center;
@@ -355,11 +355,11 @@ header {
   height: var(--spacings-large);
   border-radius: 50%;
   color: #d701eb;
-  opacity: 0.3;
+  opacity: 0.7;
   border: 1px solid #d701eb;
   pointer-events: painted;
   cursor: pointer;
-  transition: all 600ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 .back-to-top:hover {
@@ -405,6 +405,9 @@ background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
 }
 .enfase-roxo{
   color: #d701eb;
+}
+.enfase-lilaz{
+  color: #f6bffb;
 }
 
 .not-visible {
