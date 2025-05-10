@@ -485,7 +485,7 @@ background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
   font-size: var(--font-xsmall);
   padding: var(--spacings-large) var(--spacings-medium) var(--spacings-medium);
   text-align: center;
-  border-top: 0.1rem solid #d701eb;
+  border-top: 0.1rem solid #e200f7;
 }
 
 .created-by .heart {
