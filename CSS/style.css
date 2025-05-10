@@ -466,6 +466,11 @@ background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
 .logo {
   margin: 0;
   font-size: var(--font-normal);
+  width: 40%;
+  height: 40%;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 10px;
 }
 
 .close-menu {
