@@ -1,104 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <div class="top-menu-space"></div>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punch 2 Learn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
-    <link  rel="stylesheet" href="CSS/style.css">
+  <div class="top-menu-space"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punch 2 Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
 
-<header>
-  <label class="not-visible" for="close-menu">Close Menu</label>
-  <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
-  
+  <header>
+    <label class="not-visible" for="close-menu">Close Menu</label>
+    <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
+
     <aside class="menu">
       <div>
         <h1 class="logo">
-          <a onclick="getElementById('close-menu').checked = false;" href="home.html">Punch<span class="enfase">2</span> Learn</a>
+          <a onclick="getElementById('close-menu').checked = false;" href="home.html">Punch<span class="enfase">2</span>
+            Learn</a>
         </h1>
-          <nav>
-            <ul onclick="getElementById('close-menu').checked = false;">
-              <li>
-                <a href="curses.html">Curses</a>
-              </li>
-              <li>
-                <a href="support.html">Support</a>
-              </li>
-              <li>
-                <a href="aboutCreators.html">About us</a>
-              </li>
-              <li>
-                <a href="aboutTeachers.html">Teachers</a>
-              </li>
-            </ul>
-          </nav>
+        <nav>
+          <ul onclick="getElementById('close-menu').checked = false;">
+            <li>
+              <a href="curses.html">Curses</a>
+            </li>
+            <li>
+              <a href="support.html">Support</a>
+            </li>
+            <li>
+              <a href="aboutCreators.html">About us</a>
+            </li>
+            <li>
+              <a href="aboutTeachers.html">Teachers</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </aside>
-</header>
+  </header>
 
   <section class="section primary-background">
-      <div id="home"></div>
-      <header id="main-header" class="main-header section-content">
-        <div class="main-header-content">
-          <h2>Develop your career in <span class="enfase">Technology!</span></h2>
-            <p>Learn the most in-demand technologies in the market and reach your next level with the largest tech community in the country.
-            </p>
-          <button class="botao">
-            <a href=# target="_blank" rel="noopener noreferrer">
-              START NOW</a>
-          </button>
-        </div>
-      </header>
+    <div id="home"></div>
+    <header id="main-header" class="main-header section-content">
+      <div class="main-header-content text-container">
+        <h2>Develop your career in <span class="enfase">Technology!</span></h2>
+        <p>Learn the most in-demand technologies in the market and reach your next level with the largest tech community
+          in the country.
+        </p>
+        <button class="botao">
+          <a href=# target="_blank" rel="noopener noreferrer">
+            START NOW</a>
+        </button>
+      </div>
+    </header>
   </section>
-  
-  <div class="section black-background">
-    <div class="section-content">
-        <article>
-          <h2>We are Delighted to Show the World, Our First Project of a Platform of Technology Learnings
 
-          </h2>
-            <p>We are a group of students Brazil, and we are excited to share our first project with you. Our platform is designed to help you learn technology in a fun and engaging way.
-            </p>
-        </article>
-    </div>
+  <div class="section black-background">
+
+    <section class="carrossel-section">
+      <h3 class="titulo">Além das formações, ganhe acesso a diversos cursos</h3>
+
+      <div class="carrossel-container">
+
+
+        <div class="carrossel" id="carrossel">
+          <div class="card"><img src="https://placehold.co/262x136?text=Figma" alt="Figma for devs" /></div>
+          <div class="card"><img src="https://placehold.co/262x136?text=IA" alt="Produtividade com IA" /></div>
+          <div class="card"><img src="https://placehold.co/262x136?text=React" alt="Acessibilidade com ReactJS" /></div>
+          <div class="card"><img src="https://placehold.co/262x136?text=Electron" alt="Apps desktop com Electron" />
+          </div>
+          <div class="card"><img src="https://placehold.co/262x136?text=Internacional" alt="Carreira Internacional" />
+          </div>
+          <div class="card"><img src="https://placehold.co/262x136?text=IA+RS" alt="Conhecendo as IAs da Rocketseat" />
+          </div>
+        </div>
+      </div>
+      <div class="carrossel-controles">
+        <div class="botoes-navegacao">
+          <button class="botao-nav" id="btnAnterior">&#8249;</button>
+          <button class="botao-nav" id="btnProximo">&#8250;</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
+
+    </section>
   </div>
-  
+  </div>
+
   <section class="section primary-background">
-  
+
     <div class="section-content coluna">
       <div class="full-height ">
         <header class="section-header">
           <h2>Benefitis</h2>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum quaerat pariatur placeat saepe officiis vero voluptatem, magni deserunt, nisi aperiam ipsa aspernatur quod tempore asperiores distinctio incidunt culpa. Delectus?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum quaerat pariatur placeat saepe
+            officiis vero voluptatem, magni deserunt, nisi aperiam ipsa aspernatur quod tempore asperiores distinctio
+            incidunt culpa. Delectus?</p>
         </header>
-  
+
         <div class="grid-section">
-  
+
           <article>
             <h3>test</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis delectus officia non possimus, omnis rerum voluptatibus, eligendi sequi accusamus eveniet doloribus, ipsum unde sed sit? Explicabo magni unde sit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam veritatis delectus officia non
+              possimus, omnis rerum voluptatibus, eligendi sequi accusamus eveniet doloribus, ipsum unde sed sit?
+              Explicabo magni unde sit.</p>
           </article>
           <article>
             <h3>test</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque iure itaque tempore quis quasi, perferendis pariatur voluptatum asperiores, soluta tempora fuga! Laboriosam repellendus perspiciatis dignissimos minima quo aut nostrum.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque iure itaque tempore quis quasi,
+              perferendis pariatur voluptatum asperiores, soluta tempora fuga! Laboriosam repellendus perspiciatis
+              dignissimos minima quo aut nostrum.</p>
           </article>
           <article>
             <h3>test</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis modi nam iusto eos ea voluptatibus similique, odio non totam, doloremque mollitia neque, quam maiores iure earum deserunt excepturi eveniet culpa.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis modi nam iusto eos ea voluptatibus
+              similique, odio non totam, doloremque mollitia neque, quam maiores iure earum deserunt excepturi eveniet
+              culpa.</p>
           </article>
           <article>
             <h3>test</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque iure itaque tempore quis quasi, perferendis pariatur voluptatum asperiores, soluta tempora fuga! Laboriosam repellendus perspiciatis dignissimos minima quo aut nostrum.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque iure itaque tempore quis quasi,
+              perferendis pariatur voluptatum asperiores, soluta tempora fuga! Laboriosam repellendus perspiciatis
+              dignissimos minima quo aut nostrum.</p>
           </article>
         </div>
       </div>
     </div>
   </section>
-  
+
   <section id="gallery" class="section black-background">
     <div class="section-content coluna">
       <div class="full-height ">
@@ -106,7 +142,7 @@
           <h2>Gallery</h2>
           <p>Here are some of my pics.</p>
         </header>
-  
+
         <div class="grid-section">
           <div class="gallery-images">
             <img src="images/java.png" alt="Random Image" />
@@ -136,11 +172,12 @@
       </div>
     </div>
   </section>
-  
+
   <p class="created-by"><a href="aboutCreators.html">Made with <span class="heart">❤</span> by <br>
       Angelo Medeiros 3xxxx8 <br> Lucas Neres 3xxxxx2 <br> Kayky Gueno 3160913</a></p>
-  
+
   <a class="back-to-top" role="button" aria-label="Back to top" title="Back to top" href="#home"></a>
-    <script src="javascript/styles.js"> </script>
-  </body>
-  </html>
+  <script src="javascript/styles.js"> </script>
+</body>
+
+</html>
