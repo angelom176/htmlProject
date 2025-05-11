@@ -470,7 +470,7 @@ background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
   
 }
 .logoimg {
-  width: 200px; /* ou o que for ideal */
+  width: 180px; /* ou o que for ideal */
   height: auto;
   border-radius: 10px;
   display: block;      /* bom para centralizar com margin */
@@ -515,7 +515,7 @@ ul {
   justify-content: end;
   grid-column: 2;
   list-style: none;
-  padding: 30px;
+  padding: 25px;
 }
 
 /* =================== Responsive =================== */
