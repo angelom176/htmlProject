@@ -465,12 +465,17 @@ background: linear-gradient(-45deg, #20e9b0, #d701eb, #1e1e1e, #444);
 
 .logo {
   margin: 0;
+  display: inline-block;
   font-size: var(--font-normal);
-  width: 40%;
-  height: 40%;
-  justify-content: center;
-  gap: 0.5rem;
+  
+}
+.logoimg {
+  width: 200px; /* ou o que for ideal */
+  height: auto;
   border-radius: 10px;
+  display: block;      /* bom para centralizar com margin */
+  margin: 0 auto;      /* se quiser centralizar */
+
 }
 
 .close-menu {
