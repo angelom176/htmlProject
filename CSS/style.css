@@ -238,19 +238,8 @@ header {
   margin-bottom: var(--spacings-small);
 }
 
-.section-content {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: var(--spacings-medium);
-  min-height: 100vh;
-}
 
-.full-height {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
+
 
 .grid-section {
   display: grid;
@@ -268,8 +257,11 @@ header {
 }
 
 .coluna {
-  padding: 8rem 3rem;
+  padding: 5rem 5rem;
   counter-reset: portfolio;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--spacings-medium);
 }
 
 .coluna h1,
@@ -280,19 +272,12 @@ header {
 
 .coluna article > h3 {
   position: relative;
-  margin: 2rem 0 2rem 7rem;
+  margin: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
 }
-
-.coluna article > h3::before {
-  counter-increment: portfolio;
-  content: counter(portfolio);
-  position: absolute;
-  font-size: 3rem;
-  left: -7rem;
-  transform: rotate(4deg);
-  font-style: italic;
+.coluna article > p {
+ color: #a3e2d0;
 }
 
 .gallery-images {
