@@ -732,3 +732,47 @@ ul {
     
   }
 }
+/* =================== curses.html Page =================== */
+
+.section-header-curses {
+  margin: 0 auto;
+  padding: var(--spacings-xlarge) var(--spacings-medium) 0;
+  align-items: left;
+}
+
+.grid-section-curses{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.gallery-images-curses {
+  background-color: var(--dark-gray-color);
+  overflow: hidden;
+  border-radius: 15px;
+  text-align: center;
+  border-color: green;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  p{
+    color: #a3e2d0;
+    font-size: var(--font-xsmall);
+    padding: 10px;
+    font-style: italic
+  }
+  h4{
+    color: #ffffff;
+    font-size: var(--font-small);
+    padding: 10px;
+    margin: 20 0 0 0;
+    font-style: italic
+  }
+}
+
+.gallery-images-curses:hover {
+  transform: scale(1.05);
+  background-color: #444;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
