@@ -958,7 +958,7 @@ ul {
   overflow: hidden;
   border-radius: 15px;
   text-align: center;
-  border-color: green;
+  border-color: #20e9b0;
   border-width: 1px;
   border-style: solid;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -1080,7 +1080,7 @@ ul {
   transition: transform 0.3s ease;
 
   h2 {
-    color: #a2ff30;
+    color: #20e9b0;
   }
 
 
