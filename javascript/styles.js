@@ -36,3 +36,19 @@ document.querySelectorAll('.faq-question').forEach(button => {
     }
   });
 });
+
+function openModal(title, description) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-description').textContent = description;
+  document.getElementById('modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+}
+
+function startCourse() {
+  alert("Course started!");
+  closeModal();
+}
+
