@@ -836,7 +836,6 @@ ul {
 
 .creators-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px;
@@ -845,13 +844,35 @@ ul {
 }
 
 .creator-card {
-  background-color: white;
+  background-color: rgba(56, 56, 56, 0.389);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 300px;
+  padding: 50px;
+  max-width: 500px;
   text-align: center;
   transition: transform 0.3s ease;
+
+h2{
+    color: #a2ff30;
+  }
+
+
+  p{
+    color: white;
+    font-size: var(--font-xxsmall);
+    padding: 10px;
+    font-style: italic
+  }
+
+  .creator-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover; 
+  margin: 0 auto 20px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  }
 }
 
 .creator-card:hover {
