@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <h1>Support</h1>>
+
+ <header>
+  <label class="not-visible" for="close-menu">Close Menu</label>
+  <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
+  
+    <aside class="menu">
+      <div>
+        <h1 class="logo">
+          <a onclick="getElementById('close-menu').checked = false;" href="home.html">
+            <img class="logoimg" src="images/logotest.png">
+          </a>
+        </h1>
+          <nav>
+            <ul onclick="getElementById('close-menu').checked = false;">
+              <li>
+                <a href="curses.html">Courses</a>
+              </li>
+              <li>
+                <a href="support.html">Support</a>
+              </li>
+              <li>
+                <a href="aboutCreators.html">About us</a>
+              </li>
+              <li>
+                <a href="aboutTeachers.html">Teachers</a>
+              </li>
+            </ul>
+          </nav>
+      </div>
+    </aside>
+</header>
+
+  <main class="support-container">
+    <section class="support-intro">
+      <h3>Frequently Asked Questions (FAQ)</h3>
+      <ul>
+        <a href="/answer1.html"><li>How do I reset my password?</li></a>
+        <a href="/answer2.html"><li>Where can I see my courses?</li></a>
+        <a href="/answer3.html"><li>How do I contact a support agent?</li></a>
+        <a href="/answer4.html"><li>How can I update my account information?</li></a>
+      </ul>
+    </section>
+
+    <section class="support-answers">
+      <h3>Contact Support</h3>
+      <p>If you didn't find your answer above, reach out to us:</p>
+     
+        <p>Email: support@company.com<br>
+        Phone: (555) 123-4567<br>
+        WhatsApp: (555) 987-6543</p>
+      
+    </section>
+
+    <section class="support-hours">
+      <h3>Support Hours</h3>
+      <p>Monday to Friday: 9 AM – 6 PM<br>Saturday: 9 AM – 1 PM</p>
+    </section>
+  </main>
+
+  <p class="created-by"><a href="aboutCreators.html">Made with <span class="heart">❤</span> by <br>
+      Angelo Medeiros 3xxxx8 <br> Lucas Neres 3xxxxx2 <br> Kayky Gueno 3160913</a></p>
+
 </body>
 </html>
