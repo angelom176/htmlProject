@@ -230,7 +230,7 @@ header {
 }
 
 /*==================Benefits========================*/
-.benefits-header-title{
+.benefits-header-title {
   text-align: center;
   padding: var(--spacings-xlarge) var(--spacings-medium) 0;
   max-width: var(--container-width-small);
@@ -239,15 +239,17 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  
+
+
 }
+
 .benefits-header-title h2 {
   font-size: calc(var(--font-large) * 0.8);
   padding: 0 0 3rem 0;
   margin: 0;
 
 }
+
 .benefits-header {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -286,41 +288,43 @@ header {
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 .portfolio {
-    padding: 0rem 0rem;
-    counter-reset: portfolio;
-  }
-  
-  .portfolio h1,
-  .portfolio h2,
-  .portfolio h3 {
-    margin-bottom: 8rem;
-  }
-  
-  .portfolio article > p {
-    position: relative;
-    margin: 0rem 0 2rem 7rem;
-    display: flex;
-    align-items: center;
-  }
-  .portfolio article > h4 {
-    position: relative;
-    margin: 0rem 0 0rem 7rem;
-    display: flex;
-    align-items: center;
-    color: #20e9b0;
-  }
-  
-  .portfolio article > p::before {
-    counter-increment: portfolio;
-    content: counter(portfolio);
-    position: absolute;
-    font-size: 5rem;
-    left: -7rem;
-    transform: rotate(4deg);
-    font-style: italic;
-    color: #20e9b0;
-  }
+  padding: 0rem 0rem;
+  counter-reset: portfolio;
+}
+
+.portfolio h1,
+.portfolio h2,
+.portfolio h3 {
+  margin-bottom: 8rem;
+}
+
+.portfolio article>p {
+  position: relative;
+  margin: 0rem 0 2rem 7rem;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio article>h4 {
+  position: relative;
+  margin: 0rem 0 0rem 7rem;
+  display: flex;
+  align-items: center;
+  color: #20e9b0;
+}
+
+.portfolio article>p::before {
+  counter-increment: portfolio;
+  content: counter(portfolio);
+  position: absolute;
+  font-size: 5rem;
+  left: -7rem;
+  transform: rotate(4deg);
+  font-style: italic;
+  color: #20e9b0;
+}
 
 .section-content {
   max-width: var(--container-width);
@@ -518,6 +522,7 @@ header {
   border: none;
   cursor: pointer;
 }
+
 /*===================Depoimentos===============*/
 .testimonials {
   text-align: center;
@@ -545,7 +550,7 @@ header {
   background: #a3e2d0;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial img {
@@ -574,6 +579,108 @@ header {
   color: #333;
   line-height: 1.5;
 }
+
+/*=====================FAC======================*/
+.faq-wrapper {
+  background: var(--primary-color);
+  padding: 4rem 1rem;
+  color: white;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.faq-heading .faq-tag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 2rem;
+  background: #1e1e1e;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.faq-heading h2 {
+  font-size: 3.2rem;
+  line-height: 1.3;
+  max-width: 350px;
+  color: #f6bffb;
+}
+
+.faq-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+.faq-question {
+  all: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.faq-number {
+  color: #e200f7;
+  font-size: 2.5rem;
+  min-width: 5rem;
+  font-weight: bold;
+  font-weight: 500;
+  transform: rotate(4deg);
+  font-style: italic;
+}
+
+.faq-text {
+  flex-grow: 1;
+  font-size: 2rem;
+  color: #fdf9fe;
+  text-align: left;
+  font-weight: bold;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: #f6bffb;
+  font-size: 2rem;
+  margin-top: 0;
+  transition: max-height 0.4s ease, margin-top 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* =================== Menu =================== */
 .menu {
   position: fixed;
@@ -582,13 +689,14 @@ header {
   right: 0;
   background: var(--black-color);
   z-index: 1;
-  
+
 }
 
 .top-menu-space {
   width: 100%;
   height: 50px;
 }
+
 .menu>div {
   display: flex;
   justify-content: space-between;
@@ -782,11 +890,13 @@ ul {
   .section-parallax-bg {
     transform: scale(1);
   }
+
   .benefits-header {
-    grid-template-columns: 1fr; 
-    
+    grid-template-columns: 1fr;
+
   }
 }
+
 /* =================== curses.html Page =================== */
 
 .section-header-curses {
@@ -795,7 +905,7 @@ ul {
   align-items: left;
 }
 
-.grid-section-curses{
+.grid-section-curses {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
@@ -810,13 +920,15 @@ ul {
   border-width: 1px;
   border-style: solid;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  p{
+
+  p {
     color: #a3e2d0;
     font-size: var(--font-xsmall);
     padding: 10px;
     font-style: italic
   }
-  h4{
+
+  h4 {
     color: #ffffff;
     font-size: var(--font-small);
     padding: 10px;

@@ -21,3 +21,18 @@ carrossel.addEventListener('scroll', () => {
   const percentage = (scrollLeft / scrollWidth) * 100;
   progress.style.width = `${percentage}%`;
 });
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const content = item.querySelector('.faq-answer');
+
+    item.classList.toggle('active');
+
+    if (item.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    } else {
+      content.style.maxHeight = null;
+    }
+  });
+});
