@@ -1067,3 +1067,11 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
+
+/* =================== Support Page =================== */
+
+.support-container {
+  background-color: rgba(49, 49, 49, 0.371);
+  padding: 50px;
+  margin: 50px
+}
