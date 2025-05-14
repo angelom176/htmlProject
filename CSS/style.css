@@ -1071,7 +1071,44 @@ footer {
 /* =================== Support Page =================== */
 
 .support-container {
+  padding: 50px;
+  margin: 50px
+}
+
+.support-intro{
+  background-color: rgba(49, 49, 49, 0.371);
+    padding: 50px;
+  margin: 50px
+}
+
+.support-intro h3 {
+  font-size: var(--font-large);
+  border-bottom: #e200f7 solid 1px;
+}
+
+.support-answers {
   background-color: rgba(49, 49, 49, 0.371);
   padding: 50px;
   margin: 50px
+}
+
+.support-answers h3 {
+  font-size: var(--font-large);
+  border-bottom: #e200f7 solid 1px;
+}
+
+.support-hours {
+  background-color: rgba(49, 49, 49, 0.371);
+  padding: 50px;
+  margin: 50px
+} 
+.support-hours h3 {
+  font-size: var(--font-large);
+  border-bottom: #e200f7 solid 1px;
+}
+
+.support-password-container {
+  background-color: rgba(49, 49, 49, 0.371);
+  padding: 50px;
+  margin: 180px
 }
