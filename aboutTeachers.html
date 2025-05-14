@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Menu Recolhível com Troca de Imagem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link  rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>
-        Teachers
-    </h1>
-    
+<body class="teacher-page">
+
+
+  <!-- Botão para abrir menu -->
+  <button class="hamburger" id="open-menu">☰</button>
+
+  <!-- Menu lateral -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-menu">✖</button>
+    <a data-image="images/prof1.jpg">Jason Duval</a>
+    <a data-image="images/prof2.jpg">Lucia Caminos</a>
+    <a data-image="images/prof3.jpg">Cal Hampton</a>
+    <a data-image="images/prof4.jpg">Boobie Ike</a>
+    <a data-image="images/prof5.jpg">Dre'Quan Priest</a>
+    <a data-image="images/prof6.jpg">Real Dimez</a>
+    <a data-image="images/prof7.jpg">Raul Bautista</a>
+    <a data-image="images/prof8.jpg">Brian Heder</a>
+  </div>
+
+  <!-- Área para exibir imagem -->
+  <div class="image-area" id="image-area">
+    <img id="character-image" src="prof1.jpg" alt="Character">
+  </div>
+
+  <!-- Script JS para controlar menu e troca de imagem -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const imageArea = document.getElementById('image-area');
+    const imageElement = document.getElementById('character-image');
+    const menuItems = document.querySelectorAll('.sidebar a');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('open');
+      imageArea.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      imageArea.classList.remove('open');
+    });
+
+    menuItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const newImage = item.getAttribute('data-image');
+        imageElement.style.opacity = 0;
+        setTimeout(() => {
+          imageElement.src = newImage;
+          imageElement.style.opacity = 1;
+        }, 200);
+      });
+    });
+  </script>
+
 </body>
 </html>
