@@ -39,10 +39,12 @@
     const imageArea = document.getElementById('image-area');
     const imageElement = document.getElementById('character-image');
     const menuItems = document.querySelectorAll('.sidebar a');
+    const defaultImage = 'images/default.png'; // Caminho da imagem padrão
 
     openBtn.addEventListener('click', () => {
       sidebar.classList.add('open');
       imageArea.classList.add('open');
+      imageElement.src = defaultImage; // Define a imagem padrão ao abrir o menu
     });
 
     closeBtn.addEventListener('click', () => {
@@ -53,11 +55,19 @@
     menuItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
         const newImage = item.getAttribute('data-image');
+        imageElement.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+        imageElement.style.transform = 'scale(1.2) translateX(0)';
         imageElement.style.opacity = 0;
+
         setTimeout(() => {
           imageElement.src = newImage;
           imageElement.style.opacity = 1;
         }, 200);
+      });
+
+      item.addEventListener('mouseleave', () => {
+        imageElement.src = defaultImage; // Restaura a imagem padrão ao sair do link
+        imageElement.style.transform = 'scale(1) translateX(0)';
       });
     });
   </script>
