@@ -235,7 +235,9 @@ ul{display: flex;
       text-decoration: none;
       color: inherit;
     }
-    
+
+    /* ----------------------------------- Menu ----------------------------------- */    
+
     .menu {
       position: fixed;
       top: 0;
@@ -277,11 +279,6 @@ ul{display: flex;
       color: #d701eb;
     }
     
-    .logo {
-      margin: 0;
-      font-size: var(--font-normal);
-    }
-    
     .close-menu {
       display: none;
       align-items: center;
@@ -299,11 +296,20 @@ ul{display: flex;
       outline: none;
       cursor: pointer;
     }
+    /* ----------------------------------------final do menu---------------------------------------- */
+
+
     
+    .logo {
+      margin: 0;
+      font-size: var(--font-normal);
+    }
     .not-visible {
       display: none;
     }
     
+
+    /* ----------------------------------- Back to home ----------------------------------- */
     .back-to-top {
       display: flex;
       justify-content: center;
@@ -340,6 +346,10 @@ ul{display: flex;
       top: 1.8rem;
       transform: rotate(135deg);
     }
+
+    /* ----------------------------------- Final do back to home ----------------------------------- */
+
+    /* ----------------------------------- Footer ----------------------------------- */
     
     .created-by {
       font-size: var(--font-xsmall);
@@ -351,14 +361,15 @@ ul{display: flex;
     .created-by .heart {
       color: crimson;
     }
+    /* ----------------------------------- Final do footer ----------------------------------- */
 
-#firstButton{
+ /*#firstButton{
   
     padding: 10px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-}
+}*/
 
 @media (max-width: 800px) {
     .top-menu-space {
