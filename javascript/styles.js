@@ -14,7 +14,7 @@ btnProximo.addEventListener('click', () => {
 
 const progress = document.getElementById('progress');
 
-// Atualiza a largura da barra de progresso conforme rola
+// Atualiza a largura da barra de progresso conforme a rola
 carrossel.addEventListener('scroll', () => {
   const scrollLeft = carrossel.scrollLeft;
   const scrollWidth = carrossel.scrollWidth - carrossel.clientWidth;

@@ -1274,44 +1274,36 @@ footer {
 
 .price-info {
   text-align: right;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
 }
 
 .price-info strong {
-  font-size: 1rem;
+  font-size: 3rem;
   color: #ffffff;
 }
 
 /* Botões */
 .btn-continue {
   width: 100%;
-  margin-top: 2rem;
   padding: 0.75rem;
-  background-color: #996DFF;
+  background-color: #7d1b95;
   border: none;
   border-radius: 8px;
   color: white;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.7rem;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .btn-continue:hover {
-  background-color: #7c52e0;
+  background-color: #d701eb;
 }
 
-.delete-button {
-  background: none;
-  border: none;
-  cursor: not-allowed;
-  color: #e1e1e6;
-  margin-top: 1rem;
-}
 
 /* Link saiba mais */
 .saiba-mais {
-  color: #996DFF;
+  color: #e200f7;
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -1448,20 +1440,9 @@ select {
   
 }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: none;
-  border: none;
-  color: #996DFF;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-}
-
 .login-box h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .input-group {
@@ -1473,10 +1454,6 @@ select {
   margin-bottom: 1rem;
 }
 
-.input-icon {
-  margin-right: 0.5rem;
-  color: #996DFF;
-}
 
 .input-group input {
   background: none;
@@ -1484,29 +1461,13 @@ select {
   color: white;
   width: 100%;
   outline: none;
-  font-size: 1rem;
-}
-
-.btn-continue {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #996DFF;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-continue:hover {
-  background-color: #7c52e0;
+  font-size: 1.5rem;
 }
 
 .login-divider {
   text-align: center;
   margin: 2rem 0 1rem;
+  font-size: 1.5rem;
 }
 
 .social-button {
@@ -1525,19 +1486,14 @@ select {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   margin-top: 1.5rem;
   color: #ccc;
 }
 
-.secure-info img {
-  width: 20px;
-  height: 20px;
-}
-
 .login-footer {
   margin-top: 2rem;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   text-align: center;
   color: #aaa;
 }
@@ -1547,6 +1503,3 @@ select {
   text-decoration: none;
 }
 
-.login-footer a:hover {
-  text-decoration: underline;
-}
