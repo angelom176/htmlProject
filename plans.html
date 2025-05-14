@@ -104,14 +104,14 @@
 
                     </div>
 
-                    <button class="btn-continue">
+                    <button class="btn-continue" href="#card">
                         Next
                     </button>
                 </div>
             </div>
 
 
-            <div class="login-container">
+            <div id="card" class="login-container" >
                 <button class="card-header">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24"
                         stroke="currentColor" fill="none" color="#996DFF">
@@ -142,7 +142,7 @@
                             </span>
                             <input type="email" name="email" placeholder="E-mail" required />
                         </div>
-                        <button type="submit" class="btn-continue">Next</button>
+                        <button type="submit" class="btn-continue" href="#pay">Next</button>
                     </form>
 
                     <div class="login-divider">
@@ -165,23 +165,49 @@
 
                     <footer class="login-footer">
                         <a href="support.html" target="_blank">Terms of Use · Privacy
-                        Policy
+                            Policy
                         </a>
                     </footer>
                 </div>
             </div>
-            <h2 style="margin-top:2rem">Detalhes de Pagamento</h2>
-            <div class="form-group">
-                <label for="cartao">Número do Cartão</label>
-                <input type="text" id="cartao" placeholder="0000 0000 0000 0000" />
-            </div>
-            <div class="form-group">
-                <label for="validade">Validade</label>
-                <input type="text" id="validade" placeholder="MM/AA" />
-            </div>
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" placeholder="123" />
+            <div class="login-container">
+                <button class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24"
+                        stroke="currentColor" fill="none" color="#996DFF">
+                        <path
+                            d="M1.66666 9.99998C1.66666 7.05208 1.66666 5.57812 2.54399 4.59406C2.68431 4.43667 2.83897 4.2911 3.00621 4.15904C4.05176 3.33331 5.61784 3.33331 8.74999 3.33331H11.25C14.3822 3.33331 15.9482 3.33331 16.9937 4.15904C17.161 4.2911 17.3157 4.43667 17.456 4.59406C18.3333 5.57812 18.3333 7.05208 18.3333 9.99998C18.3333 12.9479 18.3333 14.4218 17.456 15.4059C17.3157 15.5633 17.161 15.7088 16.9937 15.8409C15.9482 16.6666 14.3822 16.6666 11.25 16.6666H8.74999C5.61784 16.6666 4.05176 16.6666 3.00621 15.8409C2.83897 15.7088 2.68431 15.5633 2.54399 15.4059C1.66666 14.4218 1.66666 12.9479 1.66666 9.99998Z"
+                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8.33334 13.3333H9.58334" stroke-width="1.25" stroke-miterlimit="10"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.0833 13.3333H15" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M1.66666 7.5H18.3333" stroke-width="1.25" stroke-linejoin="round"></path>
+                    </svg>
+                    <h5>Card Informations</h5>
+                </button>
+
+                <div id="pay" class="payment-box">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="cardName" placeholder="Name on Card" required />
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" id="cardNumber" placeholder="Card number" required />
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <input type="text" id="expiry" placeholder="Expiry date" required />
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="cvv" placeholder="CVV" required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-continue">Start Paid Membership</button>
+                    </form>
+                </div>
             </div>
         </div>
 
