@@ -37,7 +37,7 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 
-function openModal(title, description) {
+function openModal(title, description, imageUrl) {
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
   document.getElementById('modal').classList.remove('hidden');
