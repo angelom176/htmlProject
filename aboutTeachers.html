@@ -96,153 +96,134 @@
     const imageArea = document.getElementById('image-area');
     const imageElement = document.getElementById('character-image');
     const menuItems = document.querySelectorAll('.sidebar a');
-    const defaultImage = 'images/default.png'; // Caminho da imagem padrão
-    const openMenu = document.getElementById('open-menu'); // Mantém a linha existente
+    const defaultImage = 'images/default.png';
     const menu = document.querySelector('.menuHamburger');
-    const profCard = document.querySelector('.prof-card'); // Seleciona a div prof-card
-    const sections = document.querySelectorAll('.prof-section'); // Seleciona todas as seções
+    const sections = document.querySelectorAll('.prof-section');
     
-        // Evento para abrir o menu
-        let showDefaultImage = true; // Variável de controle para exibir a imagem padrão
-        let isScrolling = false;
-        let currentSection = 0;
+    let isScrolling = false;
+    let currentSection = 0;
 
-        // Função throttle para limitar eventos
-        function throttle(callback, limit) {
-          let wait = false;
-          return function() {
-            if (!wait) {
-              callback.apply(this, arguments);
-              wait = true;
-              setTimeout(() => { wait = false; }, limit);
-            }
-          }
+    // Função throttle para limitar eventos
+    function throttle(callback, limit) {
+      let wait = false;
+      return function() {
+        if (!wait) {
+          callback.apply(this, arguments);
+          wait = true;
+          setTimeout(() => { wait = false; }, limit);
         }
-    // Evento para abrir o menu
-    openMenu.addEventListener('click', () => {
-      menu.classList.toggle('open'); // Abre ou fecha o menuHamburger
+      }
+    }
+
+    // Controle de scroll
+    function handleScroll(e) {
+      if (isScrolling) return;
+      isScrolling = true;
+
+      const delta = Math.sign(e.deltaY);
+
+      if (delta > 0) {
+        if (currentSection < sections.length - 1) {
+          currentSection++;
+        }
+      } else {
+        if (currentSection > 0) {
+          currentSection--;
+        }
+      }
+
+      updateSection(currentSection);
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 500);
+    }
+
+    // Atualização das seções
+    function updateSection(newIndex) {
+      sections.forEach((section, index) => {
+        section.classList.toggle('active', index === newIndex);
+      });
+
+      sections[newIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Esconde a imagem quando muda de seção
+      imageArea.style.display = 'none';
+    }
+
+    // Eventos de menu
+    openBtn.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      sidebar.classList.toggle('open');
+      imageArea.style.display = 'block'; // Mostra imagem ao abrir menu
     });
-    
 
- // Controle de scroll suavizado
-function handleScroll(e) {
-  if (isScrolling) return; // Evita múltiplos eventos de rolagem simultâneos
-  isScrolling = true;
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
+      sidebar.classList.remove('open');
+      imageArea.style.display = 'none'; // Esconde imagem ao fechar menu
+    });
 
-  const delta = Math.sign(e.deltaY); // Detecta a direção do scroll
-
-  if (delta > 0) { // Scroll para baixo
-    if (currentSection < sections.length - 1) {
-      currentSection++;
-    }
-  } else { // Scroll para cima
-    if (currentSection > 0) {
-      currentSection--;
-    }
-  }
-
-  updateSection(currentSection);
-
-  setTimeout(() => {
-    isScrolling = false; // Permite novos eventos de rolagem após o delay
-  }, 500); // Ajuste o tempo conforme necessário
-}
-
-// Atualização das seções
-function updateSection(newIndex) {
-  sections.forEach((section, index) => {
-    section.classList.toggle('active', index === newIndex); // Alterna a classe 'active'
-  });
-
-  // Scroll suave para a nova seção
-  sections[newIndex].scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
-
-    // Eventos
+    // Controle de navegação por scroll/teclado
     window.addEventListener('wheel', throttle(handleScroll, 1000));
     window.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') handleScroll({ deltaY: 1 });
       if (e.key === 'ArrowUp') handleScroll({ deltaY: -1 });
     });
 
-    // Evento para abrir o menu (botão específico)
-    openBtn.addEventListener('click', () => {
-      sidebar.classList.add('open');
-      imageArea.classList.add('open');
-      imageArea.classList.remove('fullscreen'); // Remove a classe fullscreen quando o menu é aberto
-      if (showDefaultImage) {
-        imageElement.src = defaultImage; // Define a imagem padrão ao abrir o menu
-      }
-    });
-
-    // Evento para fechar o menu
-    closeBtn.addEventListener('click', () => {
-      sidebar.classList.remove('open'); // Fecha a sidebar
-      imageArea.classList.remove('open'); // Fecha a área da imagem
-      imageArea.classList.add('fullscreen'); // Adiciona a classe fullscreen quando o menu é fechado
-      menu.classList.remove('open'); // Fecha o menuHamburger
-
-      // Oculta a imagem lateral
-      const characterImage = document.getElementById('character-image');
-      characterImage.src = ''; // Remove a imagem
-    });
-
-    // Evento para trocar a imagem ao passar o mouse sobre os links
+    // Controle de hover nos itens do menu
     menuItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
+        if (!sidebar.classList.contains('open')) return;
         const newImage = item.getAttribute('data-image');
-        imageElement.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-        imageElement.style.transform = 'scale(1.5) translateX(90px) translateY(90px)';
+        imageElement.style.transition = 'all 0.5s ease';
         imageElement.style.opacity = 0;
-
+        
         setTimeout(() => {
           imageElement.src = newImage;
           imageElement.style.opacity = 1;
-          imageElement.classList.remove('default'); // Remove a classe da imagem padrão
         }, 200);
       });
 
       item.addEventListener('mouseleave', () => {
-        if (showDefaultImage) {
-          imageElement.src = defaultImage; // Restaura a imagem padrão ao sair do link
-          imageElement.style.transform = 'scale(1) translateX(35%)';
-          imageElement.classList.add('default'); // Adiciona a classe para a imagem padrão
-        }
+        if (!sidebar.classList.contains('open')) return;
+        imageElement.src = defaultImage;
       });
     });
 
-        // Evento para exibir a seção correspondente ao clicar no link
+    // Controle de clique nos links do menu
     menuItems.forEach(item => {
       item.addEventListener('click', (event) => {
-        event.preventDefault(); // Evita o comportamento padrão do link
-
-        // Obtém o valor do atributo data-prof do link clicado
+        event.preventDefault();
         const profId = item.getAttribute('data-prof');
 
-        // Remove a classe 'active' de todas as seções
+        // Ativa a seção correspondente
         sections.forEach(section => {
           section.classList.remove('active');
+          if(section.id === profId) {
+            section.classList.add('active');
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
         });
 
-        // Adiciona a classe 'active' apenas à seção correspondente
-        const selectedSection = document.getElementById(profId);
-        if (selectedSection) {
-          selectedSection.classList.add('active');
-        }
-
-        // Fecha o menu hambúrguer
+        // Fecha menu e esconde imagem
         sidebar.classList.remove('open');
         menu.classList.remove('open');
-
-        // Desativa a exibição da imagem padrão
-        showDefaultImage = false;
+        imageArea.style.display = 'none';
+        currentSection = Array.from(sections).findIndex(s => s.id === profId);
       });
     });
-    
-  </script>
+
+    // Fecha imagem ao clicar fora
+    document.addEventListener('click', (e) => {
+      if(!imageArea.contains(e.target) && !sidebar.contains(e.target)) {
+        imageArea.style.display = 'none';
+      }
+    });
+</script>
 
 </body>
 </html>
