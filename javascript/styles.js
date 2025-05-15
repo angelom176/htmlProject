@@ -64,35 +64,30 @@ function startCourse() {
   }
 }
 
+const sidebar = document.getElementById('sidebar');
+const openBtn = document.getElementById('open-menu');
+const closeBtn = document.getElementById('close-menu');
+const imageArea = document.getElementById('image-area');
+const imageElement = document.getElementById('character-image');
+const menuItems = document.querySelectorAll('.sidebar a');
 
-
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.closest('.faq-item');
-    const content = item.querySelector('.faq-answer');
-
-    item.classList.toggle('active');
-
-    if (item.classList.contains('active')) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    } else {
-      content.style.maxHeight = null;
-    }
-  });
+openBtn.addEventListener('click', () => {
+  sidebar.classList.add('open');
+  imageArea.classList.add('open');
 });
 
-function openModal(title, description) {
-  document.getElementById('modal-title').textContent = title;
-  document.getElementById('modal-description').textContent = description;
-  document.getElementById('modal').classList.remove('hidden');
-}
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('open');
+  imageArea.classList.remove('open');
+});
 
-function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
-}
-
-function startCourse() {
-  alert("Course started!");
-  closeModal();
-}
-
+menuItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    const newImage = item.getAttribute('data-image');
+    imageElement.style.opacity = 0;
+    setTimeout(() => {
+      imageElement.src = newImage;
+      imageElement.style.opacity = 1;
+    }, 200);
+  });
+});

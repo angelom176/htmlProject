@@ -1844,3 +1844,186 @@ ul {
     color: #aaa;
     text-decoration: none;
   }
+
+  /* ----------------------------------- Estilos da Página Teacher ----------------------------------- */
+/* Menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -50vw; /* Inicialmente fora da tela */
+  width: 50vw;
+  height: 100%;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column; /* Alinha os itens na vertical */
+  justify-content: center; /* Centraliza os itens no meio */
+  align-items: center; /* Centraliza os itens na horizontal */
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+.sidebar.open {
+  left: 0; /* Quando aberto, move para a esquerda */
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+/* Estilo dos links */
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 0; /* Espaçamento em cima e embaixo */
+  font-size: 18px;
+  text-align: center; /* Centraliza o texto */
+  width: 100%; /* Faz os links ocuparem toda a largura */
+  display: block; /* Faz os links se comportarem como blocos */
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #444; /* Efeito de hover */
+}
+
+/* Estilo do botão de fechar */
+.close-btn {
+  font-size: 36px;
+  color: white;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Estilo do botão de abrir (hamburger) */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+.image-area {
+  position: fixed; /* Fixa a área de imagem na tela */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa 100% da largura da tela */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Garante que fique acima de outros elementos */
+  pointer-events: none; /* Impede que a área bloqueie cliques */
+}
+
+.image-area img {
+  width: 100%; /* Faz a imagem ocupar toda a largura */
+  height: 100%; /* Faz a imagem ocupar toda a altura */
+  object-fit:fill; /* Garante que a imagem preencha sem distorção */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao redimensionar */
+  pointer-events: auto; /* Permite interação apenas com a imagem */
+}
+
+.image-area.open {
+  opacity: 1;
+}
+
+#character-image {
+  width: auto; /* Permite que a largura seja ajustada automaticamente */
+  height: 67vw; /* Permite que a altura seja ajustada automaticamente */
+  max-width: none; /* Remove qualquer limite de largura */
+  max-height: none; /* Remove qualquer limite de altura */
+  transition: transform 0.3s ease; /* Mantém a transição suave */
+  z-index: 20; /* Garante que fique acima de outros elementos */
+  pointer-events: auto; /* Permite interação apenas com a imagem */
+}
+
+.teacher-page .teacher-header {
+  background-color: var(--primary-color);
+  padding: var(--spacings-large) var(--spacings-xlarge);
+  text-align: center;
+  color: white;
+}
+
+.teacher-page .teacher-header h1 {
+  font-size: var(--font-large);
+  color: white;
+}
+
+.teacher-page .teacher-section {
+  background-color: var(--dark-gray-color);
+  padding: var(--spacings-large) var(--spacings-medium);
+}
+
+.teacher-page .teacher-section h2 {
+  font-size: var(--font-large);
+  color: #d701eb;
+  margin-bottom: var(--spacings-medium);
+}
+
+.teacher-page .teacher-section p {
+  font-size: var(--font-small);
+  color: white;
+}
+
+.teacher-page .teacher-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacings-medium);
+}
+
+.teacher-page .teacher-item {
+  background-color: var(--black-color);
+  padding: var(--spacings-small);
+  border-radius: 8px;
+  width: calc(33.333% - 20px);
+  text-align: center;
+  color: white;
+}
+
+.teacher-page .teacher-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.teacher-page .teacher-item h3 {
+  font-size: var(--font-small);
+  margin-top: var(--spacings-small);
+}
+
+.teacher-page .teacher-item p {
+  font-size: var(--font-xxsmall);
+}
+
+.teacher-page .teacher-button {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacings-large);
+}
+
+.teacher-page .teacher-button a {
+  background-color: #d701eb;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.teacher-page .teacher-button a:hover {
+  background-color: #8c00b3;
+}
+/* ----------------------------------- Final dos Estilos da Página Teacher ----------------------------------- */
