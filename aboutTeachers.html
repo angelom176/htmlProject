@@ -5,30 +5,87 @@
   <title>Menu Recolhível com Troca de Imagem</title>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
     <link rel="icon" type="image/png" href="images/favicon.ico">
-    <link  rel="stylesheet" href="CSS/style.css">
+    <link  rel="stylesheet" href="/style.css">
 </head>
 <body class="teacher-page">
-
-
   <!-- Botão para abrir menu -->
   <button class="hamburger" id="open-menu">☰</button>
-
   <!-- Menu lateral -->
   <div class="sidebar" id="sidebar">
-    <button class="close-btn" id="close-menu">✖</button>
-    <a data-image="images/prof1.jpg">Jason Duval</a>
-    <a data-image="images/prof2.jpg">Lucia Caminos</a>
-    <a data-image="images/prof3.jpg">Cal Hampton</a>
-    <a data-image="images/prof4.jpg">Boobie Ike</a>
-    <a data-image="images/prof5.jpg">Dre'Quan Priest</a>
-    <a data-image="images/prof6.jpg">Real Dimez</a>
-    <a data-image="images/prof7.jpg">Raul Bautista</a>
-    <a data-image="images/prof8.jpg">Brian Heder</a>
+      <div class="menuHamburger">
+        <h1 class="logo">
+          <a href="/home.html">
+            <img class="logoimg" src="images/logotest.png" alt="Logo">
+          </a>
+        </h1>     
+      </div>
+      <button class="close-btn" id="close-menu">✖</button>
+      <div>
+        <a href="#"  data-image="images/prof1.jpg" data-prof="prof1" >Jason Duval</a>
+        <a href="#"  data-image="images/prof2.jpg" data-prof="prof2">Lucia Caminos</a>
+        <a href="#"  data-image="images/prof3.jpg" data-prof="prof3">Cal Hampton</a>
+        
+      
+        <a href="/aboutCreators.html">About us</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prof-sections">
+
+      <!-- Seção do Jason -->
+      <section class="prof-section active" id="prof1" data-prof="prof1">
+        <div class="prof-content">
+          <h2>Jason Duval</h2>
+          <p class="prof-description">
+            Ex-militar com 10+ anos de experiência em desenvolvimento web, Jason Duval transforma códigos em missões. Especialista em HTML, CSS e JavaScript, ele ensina front-end com a precisão tática de quem já comandou operações de alto risco. Suas aulas combinam técnicas avançadas (React, Vue.js) com ferramentas essenciais (Webpack, SASS) e metodologias ágeis.
+          </p>
+          </div> 
+        </section>
+
+      <!-- Seção da Lucia -->
+      <section class="prof-section" id="prof2" data-prof="prof2">
+        <div class="prof-content">
+          <h2>Lucia Caminos</h2>
+          <p class="prof-description">
+            Com uma abordagem prática e didática, Lucia Caminos é referência no ensino de desenvolvimento back-end. Especialista em Python, Node.js e arquitetura de sistemas, ela transforma conceitos complexos em projetos acessíveis, preparando alunos para criar soluções robustas e escaláveis.          </p>
+        </div>
+      </section>
+      <!-- Seção do Jason -->
+       <section class="prof-section" id="prof3" data-prof="prof3">
+        <div class="prof-content">
+          <h2>Cal Hampton</h2>
+          <p class="prof-description">
+            Cal is a former soldier who has seen the worst of humanity. He fought for his country, but now he fights for his family.
+          </p>
+        </div>
+        </section>
+    
+      <!-- Adicione outras seções seguindo o mesmo padrão -->
+    </div>
   </div>
 
   <!-- Área para exibir imagem -->
-  <div class="image-area" id="image-area">
-    <img id="character-image" src="prof1.jpg" alt="Character">
+  <div class="image-area" id="image-area" >
+    <div class="prof-card" id="prof1">
+      <h2 class="prof-name">Jason Duval</h2>
+      <p class="prof-description">
+        A curious mind with a strong interest in software development and AI. Kayky enjoys turning ideas into reality through code and is always exploring innovative solutions.
+      </p>
+    </div>
+    <div class="prof-card" id="prof2">
+      <h2 class="prof-name">Lucia Caminos</h2>
+      <p class="prof-description">
+        Lucia is a passionate educator with a love for teaching and inspiring students to achieve their best.
+      </p>
+    </div>
+    <div class="prof-card" id="prof3">
+      <h2 class="prof-name">Cal Hampton</h2>
+      <p class="prof-description">
+        Cal is a dedicated teacher who believes in the power of education to transform lives.
+      </p>
+    </div>
+    <img id="character-image" alt="Character">
   </div>
 
   <!-- Script JS para controlar menu e troca de imagem -->
@@ -39,26 +96,92 @@
     const imageArea = document.getElementById('image-area');
     const imageElement = document.getElementById('character-image');
     const menuItems = document.querySelectorAll('.sidebar a');
-    const defaultImage = 'images/default.png'; // Caminho da imagem padrão
+    const defaultImage = 'images/default.png';
+    const menu = document.querySelector('.menuHamburger');
+    const sections = document.querySelectorAll('.prof-section');
+    
+    let isScrolling = false;
+    let currentSection = 0;
 
+    // Função throttle para limitar eventos
+    function throttle(callback, limit) {
+      let wait = false;
+      return function() {
+        if (!wait) {
+          callback.apply(this, arguments);
+          wait = true;
+          setTimeout(() => { wait = false; }, limit);
+        }
+      }
+    }
+
+    // Controle de scroll
+    function handleScroll(e) {
+      if (isScrolling) return;
+      isScrolling = true;
+
+      const delta = Math.sign(e.deltaY);
+
+      if (delta > 0) {
+        if (currentSection < sections.length - 1) {
+          currentSection++;
+        }
+      } else {
+        if (currentSection > 0) {
+          currentSection--;
+        }
+      }
+
+      updateSection(currentSection);
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 500);
+    }
+
+    // Atualização das seções
+    function updateSection(newIndex) {
+      sections.forEach((section, index) => {
+        section.classList.toggle('active', index === newIndex);
+      });
+
+      sections[newIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Esconde a imagem quando muda de seção
+      imageArea.style.display = 'none';
+    }
+
+    // Eventos de menu
     openBtn.addEventListener('click', () => {
-      sidebar.classList.add('open');
-      imageArea.classList.add('open');
-      imageElement.src = defaultImage; // Define a imagem padrão ao abrir o menu
+      menu.classList.toggle('open');
+      sidebar.classList.toggle('open');
+      imageArea.style.display = 'block'; // Mostra imagem ao abrir menu
     });
 
     closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
       sidebar.classList.remove('open');
-      imageArea.classList.remove('open');
+      imageArea.style.display = 'none'; // Esconde imagem ao fechar menu
     });
 
+    // Controle de navegação por scroll/teclado
+    window.addEventListener('wheel', throttle(handleScroll, 1000));
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') handleScroll({ deltaY: 1 });
+      if (e.key === 'ArrowUp') handleScroll({ deltaY: -1 });
+    });
+
+    // Controle de hover nos itens do menu
     menuItems.forEach(item => {
       item.addEventListener('mouseenter', () => {
+        if (!sidebar.classList.contains('open')) return;
         const newImage = item.getAttribute('data-image');
-        imageElement.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-        imageElement.style.transform = 'scale(1.2) translateX(0)';
+        imageElement.style.transition = 'all 0.5s ease';
         imageElement.style.opacity = 0;
-
+        
         setTimeout(() => {
           imageElement.src = newImage;
           imageElement.style.opacity = 1;
@@ -66,11 +189,43 @@
       });
 
       item.addEventListener('mouseleave', () => {
-        imageElement.src = defaultImage; // Restaura a imagem padrão ao sair do link
-        imageElement.style.transform = 'scale(1) translateX(0)';
+        if (!sidebar.classList.contains('open')) return;
+        imageElement.src = defaultImage;
       });
     });
-  </script>
+
+    // Controle de clique nos links do menu
+    menuItems.forEach(item => {
+      if(item.hasAttribute('data-prof')) {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      const profId = item.getAttribute('data-prof');
+
+        // Ativa a seção correspondente
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if(section.id === profId) {
+            section.classList.add('active');
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+
+        // Fecha menu e esconde imagem
+        sidebar.classList.remove('open');
+        menu.classList.remove('open');
+        imageArea.style.display = 'none';
+        currentSection = Array.from(sections).findIndex(s => s.id === profId);
+      });
+    }
+    });
+
+    // Fecha imagem ao clicar fora
+    document.addEventListener('click', (e) => {
+      if(!imageArea.contains(e.target) && !sidebar.contains(e.target)) {
+        imageArea.style.display = 'none';
+      }
+    });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,856 @@
+:root {
+  --primary-color: #080610;
+  --black-color: #181414; 
+  --dark-gray-color: #2e3038;
+
+  --container-width: 120rem;
+  --container-width-small: 80rem;
+  --container-images: 36rem;
+
+  --spacings-xsmall: 1rem;
+  --spacings-small: 2rem;
+  --spacings-medium: 3rem;
+  --spacings-large: 5rem;
+  --spacings-xlarge: 8rem;
+  --spacings-xxlarge: 11rem;
+
+  --font-bold: 700;
+  --font-xxlarge: 10rem;
+  --font-xlarge: 8rem;
+  --font-large: 6rem;
+  --font-medium: 4rem;
+  --font-normal: 2.3rem;
+  --font-small: 1.8rem;
+  --font-xsmall: 1.6rem;
+  --font-xxsmall: 1.4rem;
+  --font-family: 'Sora', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  color: var(--primary-color);
+}
+body{
+  font-size: var(--font-normal);
+  font-family: var(--font-family);
+  background-color: var(--black-color);
+}
+
+header{display: grid;
+  grid-template-columns: 2;
+  grid-column: 1;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  font-size: var(--font-large);
+  margin: 0 0 var(--spacings-large);
+}
+
+h2 {
+  font-size: var(--font-large);
+}
+h3 {
+  font-size: var(--spacings-medium);
+  text-transform: initial;
+  margin: 0 0 var(--spacings-medium);
+}
+p {
+  margin: 0 0 var(--spacings-medium);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+article {
+  width: 100%;
+}
+fieldset {
+  border: none;
+}
+
+.top-menu-space {
+  width: 100%;
+  height: 60px;
+}
+
+.primary-background {
+  background-color: var(--primary-color);
+}
+.black-background{
+  background-color: var(--black-color);
+}
+.enfase{
+  color: #d701eb;
+}
+.botao {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8rem 1.5rem;
+  gap: 0.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 16.41px;
+  background-color: white;
+  color: #d701eb; 
+  margin-top: 1.5rem;
+  text-decoration: none;
+  border-color: #d701eb;
+  cursor: pointer;
+  
+}
+
+.botao:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+ul{display: flex;
+  gap: 30px;
+  justify-content: end;
+  grid-column: 2;
+  list-style: none;
+  padding: 30px;}
+
+  .section {
+    margin: 0 auto;
+  }
+  
+  .section .section-header {
+    margin-bottom: var(--spacings-xlarge);
+  }
+  
+  .section .section-header h1,
+  .section .section-header h2,
+  .section .section-header h3 {
+    margin-bottom: var(--spacings-small);
+  }
+  
+  .section-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacings-medium);
+    min-height: 100vh;
+  }
+
+  .main-header {
+    text-align: center;
+  padding: var(--spacings-large) var(--spacings-xlarge);
+  max-width: var(--container-width-small);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  }
+  
+  .main-header-content {
+    font-size: var(--font-normal);
+  }
+  .main-header-content h2 {
+    font-size: calc(var(--font-large) * 0.8);
+   
+  }
+  .main-header-content h1 {
+    font-size: var(--font-large);
+    line-height: 1;
+  }
+  .full-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .grid-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .grid-section-two {
+    display: grid;
+    gap: 3rem;
+  }
+  .grid-section-two h3 {
+    font-size: calc(var(--font-medium) * 0.7); 
+  }
+  .coluna {
+    padding: 8rem 3rem;
+    counter-reset: portfolio;
+  }
+  .coluna h1,
+.coluna h2,
+.coluna h3 {
+  margin-bottom: 8rem;
+}
+  .coluna article > h3 {
+    position: relative;
+    margin: 2rem 0 2rem 7rem;
+    display: flex;
+    align-items: center;
+  }
+  .coluna article > h3::before {
+    counter-increment: portfolio;
+    content: counter(portfolio);
+    position: absolute;
+    font-size: 3rem;
+    left: -7rem;
+    transform: rotate(4deg);
+    font-style: italic;
+  }
+  .gallery-images {
+    overflow: hidden;
+    max-width: var(--container-images);
+    max-height: var(--container-images);
+  }
+  
+  .gallery-images img {
+    height: 600px;
+    height: 250px;
+    transition: all 300ms ease-in-out;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ----------------------------------- Menu ----------------------------------- */    
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--black-color);
+    z-index: 1;
+    border-bottom: 1px solid #d701eb;
+  }
+  
+  .menu > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  
+  .menu nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .menu nav ul a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0 var(--spacings-small);
+    text-transform: lowercase;
+    font-size: var(--font-small);
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu nav ul a:hover{
+    color: #d701eb;
+  }
+  
+  .close-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 101;
+    top: var(--spacings-small);
+    right: var(--spacings-small);
+    appearance: none;
+    width: calc(var(--spacings-xlarge) / 2);
+    height: calc(var(--spacings-xlarge) / 2);
+    font-size: var(--spacings-medium);
+    background: var(--primary-color);
+    color: var(--white-color);
+    outline: none;
+    cursor: pointer;
+  }
+  /* ----------------------------------------final do menu---------------------------------------- */
+
+
+  
+  .logo {
+    margin: 0;
+    font-size: var(--font-normal);
+  }
+  .not-visible {
+    display: none;
+  }
+  
+  .logoimg { 
+    cursor: pointer;
+    position: relative;
+    z-index: 9999 !important; /* Força acima de outros elementos */
+  }
+  
+  .logo a {
+    pointer-events: auto !important; /* Anula qualquer bloqueio */
+    display: inline-block; /* Garante comportamento de link */
+  }
+  
+
+  /* ----------------------------------- Back to home ----------------------------------- */
+  .back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: var(--spacings-small);
+    right: var(--spacings-small);
+    z-index: 1;
+    background: var(--primary-color);
+    width: var(--spacings-large);
+    height: var(--spacings-large);
+    border-radius: 50%;
+    color: #d701eb;
+    opacity: 0.3;
+    border: 1px solid #d701eb;
+    pointer-events: painted;
+    cursor: pointer;
+    transition: all 600ms ease-in-out;
+  }
+  
+  .back-to-top:hover {
+    opacity: 1;
+  }
+  
+  .back-to-top:after {
+    position: absolute;
+    content: "";
+    width: calc(var(--spacings-large) / 4);
+    height: calc(var(--spacings-large) / 4);
+    border-width: 0.5rem;
+    border-style: solid;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    top: 1.8rem;
+    transform: rotate(135deg);
+  }
+
+  /* ----------------------------------- Final do back to home ----------------------------------- */
+
+  /* ----------------------------------- Footer ----------------------------------- */
+  
+  .created-by {
+    font-size: var(--font-xsmall);
+    padding: var(--spacings-large) var(--spacings-medium) var(--spacings-medium);
+    text-align: center;
+    border-top: 0.1rem solid #d701eb;
+  }
+  
+  .created-by .heart {
+    color: crimson;
+  }
+  /* ----------------------------------- Final do footer ----------------------------------- */
+
+/*#firstButton{
+
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}*/
+
+@media (max-width: 800px) {
+  .top-menu-space {
+    width: 100%;
+    height: 0;
+  }
+
+  .grid-section,
+  .main-header {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-images {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .menu .logo {
+    margin-bottom: var(--spacings-medium);
+  }
+
+  .menu {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  .menu nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu nav ul {
+    flex-direction: column;
+  }
+
+  .close-menu {
+    display: flex;
+  }
+
+  .close-menu:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .close-menu:not(:checked):after {
+    content: "☰";
+  }
+
+  .close-menu:hover,
+  .close-menu:active,
+  .close-menu:after,
+  .close-menu:before {
+    color: #fff;
+  }
+
+  .close-menu:checked:after {
+    content: "×";
+  }
+
+  .close-menu:not(:checked) ~ .menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  h1 {
+    font-size: var(--font-medium);
+  }
+
+  h2 {
+    font-size: var(--font-medium);
+  }
+
+  .main-header-content h1,
+  .main-header-content h2 {
+    font-size: var(--font-medium);
+  }
+
+  .text-container {
+    max-width: 100%;
+    padding: var(--spacings-xlarge) 0;
+  }
+
+  #footer .main-header {
+    grid-template-rows: 1fr;
+  }
+
+  #footer .main-header .main-header-content {
+    order: 0;
+  }
+
+  #footer .main-header .main-header-logo {
+    order: 1;
+    display: none;
+  }
+
+  #footer .main-header .main-header-form {
+    order: 2;
+    column-span: none;
+  }
+
+  .section-parallax-bg {
+    transform: scale(1);
+  }
+}
+
+/* ----------------------------------- Estilos da Página Teacher ----------------------------------- */
+
+/* Estilo para centralizar e estilizar o conteúdo da container */
+.container {
+  display: flex; /* Define um layout flexível */
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: center; /* Centraliza os elementos verticalmente */
+  text-align: center; /* Centraliza o texto */
+  padding: 2rem; /* Adiciona espaçamento interno */
+  width: 100%;
+  margin: 0 auto; /* Centraliza horizontalmente na página */
+}
+
+/* ... (mantenha todo o CSS anterior até a linha 564) ... */
+
+/* =============== NOVOS ESTILOS PARA SESSÕES =============== */
+.prof-sections {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+  z-index: 50;
+}
+
+.prof-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.prof-section.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 60;
+}
+
+#prof1 { background-image: url(images/prof1.jpg); }
+#prof2 { background-image: url(images/prof2.jpg); }
+#prof3 { background-image: url(images/prof3.jpg); }
+#prof4 { background-image: url(images/prof4.jpg); }
+#prof5 { background-image: url(images/prof5.jpg); }
+
+.prof-content {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(50%);
+  transform: translatex(-100%);
+  width: 40%;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-left: 4px solid #a2ff30;
+  backdrop-filter: blur(5px);
+}
+
+.prof-content h2 {
+  color: #a2ff30;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.prof-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* ... (mantenha o restante do CSS existente) ... */
+
+/* Menu lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -50vw; /* Inicialmente fora da tela */
+  width: 50vw;
+  height: 100%;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column; /* Alinha os itens na vertical */
+  justify-content: center; /* Centraliza os itens no meio */
+  align-items: center; /* Centraliza os itens na horizontal */
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+.sidebar.open {
+  left: 0; /* Quando aberto, move para a esquerda */
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+/* Estilo dos links */
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 0; /* Espaçamento em cima e embaixo */
+  font-size: 18px;
+  text-align: center; /* Centraliza o texto */
+  width: 100%; /* Faz os links ocuparem toda a largura */
+  display: block; /* Faz os links se comportarem como blocos */
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #444; /* Efeito de hover */
+}
+
+/* Estilo do botão de fechar */
+.close-btn {
+  font-size: 36px;
+  color: white;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Estilo do botão de abrir (hamburger) */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  pointer-events: auto; /* Permite que o botão receba cliques */
+}
+
+.menuHamburger {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 45vw;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.menuHamburger.open {
+  left: 0;
+}
+
+.image-area {
+  position: fixed; /* Fixa a área de imagem na tela */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa 100% da largura da tela */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Garante que fique acima de outros elementos */
+  pointer-events: none; /* Impede que a área bloqueie cliques */
+  display: none;
+}
+.sidebar.open ~ .image-area {
+  display: block;
+  z-index: 100;
+}
+
+.image-area img {
+  width: 100%; /* Faz a imagem ocupar toda a largura */
+  height: 100%; /* Faz a imagem ocupar toda a altura */
+  object-fit:fill; /* Garante que a imagem preencha sem distorção */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao redimensionar */
+  pointer-events: auto; /* Permite interação apenas com a imagem */
+  position: relative; /* Define a posição relativa */
+  z-index: 1; /* Garante que a imagem fique atrás da prof-card */
+}
+.image-area.open {
+  opacity: 1;
+}
+
+#character-image {
+  width: auto; /* Permite que a largura seja ajustada automaticamente */
+  height: 67vw; /* Permite que a altura seja ajustada automaticamente */
+  max-width: none; /* Remove qualquer limite de largura */
+  max-height: none; /* Remove qualquer limite de altura */
+  transition: transform 0.3s ease; /* Mantém a transição suave */
+  z-index: 20; /* Garante que fique acima de outros elementos */
+  pointer-events: auto; /* Permite interação apenas com a imagem */
+}
+
+.teacher-page .teacher-header {
+  background-color: var(--primary-color);
+  padding: var(--spacings-large) var(--spacings-xlarge);
+  text-align: center;
+  color: white;
+}
+
+.teacher-page .teacher-header h1 {
+  font-size: var(--font-large);
+  color: white;
+}
+
+.teacher-page .teacher-section {
+  background-color: var(--dark-gray-color);
+  padding: var(--spacings-large) var(--spacings-medium);
+}
+
+.teacher-page .teacher-section h2 {
+  font-size: var(--font-large);
+  color: #d701eb;
+  margin-bottom: var(--spacings-medium);
+}
+
+.teacher-page .teacher-section p {
+  font-size: var(--font-small);
+  color: white;
+}
+
+.teacher-page .teacher-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacings-medium);
+}
+
+.teacher-page .teacher-item {
+  background-color: var(--black-color);
+  padding: var(--spacings-small);
+  border-radius: 8px;
+  width: calc(33.333% - 20px);
+  text-align: center;
+  color: white;
+}
+
+.teacher-page .teacher-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.teacher-page .teacher-item h3 {
+  font-size: var(--font-small);
+  margin-top: var(--spacings-small);
+}
+
+.teacher-page .teacher-item p {
+  font-size: var(--font-xxsmall);
+}
+
+.teacher-page .teacher-button {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacings-large);
+}
+
+.teacher-page .teacher-button a {
+  background-color: #d701eb;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.teacher-page .teacher-button a:hover {
+  background-color: #8c00b3;
+}
+
+/* Oculta a div prof-card por padrão */
+.prof-card {
+  display: none;
+}
+/* Oculta todas as prof-cards por padrão */
+.prof-card {
+  display: none;
+}
+
+/* Mostra a div prof-card quando a classe "visible" é adicionada */
+.prof-card.visible {
+  display: block;
+}
+.prof-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 100px;
+}
+
+.prof-card {
+  background-color: rgba(56, 56, 56, 0.389);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative; /* Define a posição relativa para usar z-index */
+  z-index: 10; /* Garante que a prof-card fique acima de outros elementos */
+  background-color: rgba(255, 255, 255, 0.8); /* Adiciona um fundo semitransparente para melhor visibilidade */
+  padding: 1rem; /* Adiciona espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas para um visual mais agradável */
+}
+
+h2{
+    color: #a2ff30;
+  }
+
+
+  p{
+    color: white;
+    font-size: var(--font-xxsmall);
+    padding: 10px;
+    font-style: italic
+  }
+
+  .creator-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover; 
+  margin: 0 auto 20px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  }
+
+
+.prof-card:hover {
+  transform: translateY(-5px);
+}
+
+.prof-name {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Estilo do texto da prof-description */
+.prof-description {
+  position: relative; /* Garante que o texto siga o z-index da prof-card */
+  z-index: 30; /* Garante que o texto fique acima de tudo */
+  font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+  color: white; /* Garante que o texto seja visível */
+  text-align: center; /* Centraliza o texto */
+  padding: 1rem; /* Adiciona espaçamento interno */
+}
+/* ----------------------------------- Final dos Estilos da Página Teacher ----------------------------------- */

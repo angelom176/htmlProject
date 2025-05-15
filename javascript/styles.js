@@ -14,7 +14,11 @@ btnProximo.addEventListener('click', () => {
 
 const progress = document.getElementById('progress');
 
+<<<<<<< HEAD
+// Atualiza a largura da barra de progresso conforme rola
+=======
 // Atualiza a largura da barra de progresso conforme a rola
+>>>>>>> b3f9602a2de164f2fdddc57a72035184967900b2
 carrossel.addEventListener('scroll', () => {
   const scrollLeft = carrossel.scrollLeft;
   const scrollWidth = carrossel.scrollWidth - carrossel.clientWidth;
@@ -38,12 +42,26 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
 function openModal(title, description) {
+<<<<<<< HEAD
+=======
   currentCourse = title.toLowerCase().replace(/[^a-z0-9]/gi, ""); 
+>>>>>>> b3f9602a2de164f2fdddc57a72035184967900b2
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
   document.getElementById('modal').classList.remove('hidden');
 }
 
+<<<<<<< HEAD
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+}
+
+function startCourse() {
+  alert("Course started!");
+  closeModal();
+}
+
+=======
 function startCourse() {
   const courseLinks = {
     "java": "java.html",
@@ -91,3 +109,4 @@ menuItems.forEach(item => {
     }, 200);
   });
 });
+>>>>>>> b3f9602a2de164f2fdddc57a72035184967900b2
