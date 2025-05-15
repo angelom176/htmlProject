@@ -26,7 +26,7 @@
         <a href="#"  data-image="images/prof3.jpg" data-prof="prof3">Cal Hampton</a>
         
       
-        <a href="aboutCreators.html">About us</a>
+        <a href="/aboutCreators.html">About us</a>
     </div>
   </div>
 
@@ -196,9 +196,10 @@
 
     // Controle de clique nos links do menu
     menuItems.forEach(item => {
-      item.addEventListener('click', (event) => {
-        event.preventDefault();
-        const profId = item.getAttribute('data-prof');
+      if(item.hasAttribute('data-prof')) {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      const profId = item.getAttribute('data-prof');
 
         // Ativa a seção correspondente
         sections.forEach(section => {
@@ -215,6 +216,7 @@
         imageArea.style.display = 'none';
         currentSection = Array.from(sections).findIndex(s => s.id === profId);
       });
+    }
     });
 
     // Fecha imagem ao clicar fora
