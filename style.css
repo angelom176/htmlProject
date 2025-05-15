@@ -683,17 +683,6 @@ ul{display: flex;
   position: relative; /* Define a posição relativa */
   z-index: 1; /* Garante que a imagem fique atrás da prof-card */
 }
-
-/* Estilo específico para a imagem padrão */
-
-
-/* Quando o menu está fechado, a imagem ocupa 100% da tela */
-.image-area.fullscreen img {
-  width: 100vw; /* Ocupa 100% da largura da tela */
-  height: 100vh; /* Ocupa 100% da altura da tela */
-  object-fit: cover; /* Garante que a imagem preencha sem distorção */
-  transition: all 0.5s ease; /* Transição suave ao redimensionar */
-}
 .image-area.open {
   opacity: 1;
 }
