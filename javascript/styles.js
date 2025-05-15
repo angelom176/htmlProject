@@ -38,7 +38,7 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
 function openModal(title, description) {
-  currentCourse = title.toLowerCase().replace(/[^a-z0-9]/gi, ""); // transforma "JavaScript" em "javascript"
+  currentCourse = title.toLowerCase().replace(/[^a-z0-9]/gi, ""); 
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
   document.getElementById('modal').classList.remove('hidden');
@@ -105,7 +105,7 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 
-function openModal(title, description, imageUrl) {
+function openModal(title, description) {
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
   document.getElementById('modal').classList.remove('hidden');
