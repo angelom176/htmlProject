@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <div class="top-menu-space"></div>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punch 2 Learn - Courses</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
-    <link  rel="stylesheet" href="CSS/style.css">
+  <div class="top-menu-space"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punch 2 Learn - Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
 
-<header>
-  <label class="not-visible" for="close-menu">Close Menu</label>
-  <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
-  
+  <header>
+    <label class="not-visible" for="close-menu">Close Menu</label>
+    <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
+
     <aside class="menu">
       <div>
         <h1 class="logo">
@@ -22,98 +24,108 @@
             <img class="logoimg" src="images/logotest.png">
           </a>
         </h1>
-          <nav>
-            <ul onclick="getElementById('close-menu').checked = false;">
-              <li>
-                <a href="curses.html">Courses</a>
-              </li>
-              <li>
-                <a href="support.html">Support</a>
-              </li>
-              <li>
-                <a href="aboutCreators.html">About us</a>
-              </li>
-              <li>
-                <a href="aboutTeachers.html">Teachers</a>
-              </li>
-            </ul>
-          </nav>
+        <nav>
+          <ul onclick="getElementById('close-menu').checked = false;">
+            <li>
+              <a href="curses.html">Courses</a>
+            </li>
+            <li>
+              <a href="support.html">Support</a>
+            </li>
+            <li>
+              <a href="aboutCreators.html">About us</a>
+            </li>
+            <li>
+              <a href="aboutTeachers.html">Teachers</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </aside>
-</header>
+  </header>
 
   <section id="curses" class="section-black-background">
-        <header class="section-header-curses">
-          <h2>Courses</h2>
-        </header>
-  
-            <div class="grid-section-curses">
-                <div class="gallery-images-curses" onclick="openModal('Java', 'Learn The Basics of Java in This Course and its Foundation and more lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum')">
-                    <img src="images/java.png" alt="Random Image" />
-                    <h4>Java</h4>
-                    <p>Learn The Basics of Java in This Course</p>
-                </div>
+    <header class="section-header-curses">
+      <h2>Courses</h2>
+    </header>
 
-                <div class="gallery-images-curses" onclick="openModal('Python', 'Learn The Basics of Python in This Course and its Foundation and more')">
-                    <img src="/images/image.png" alt="Random Image" />
-                    <h4>Python</h4>
-                    <p>Learn The Basics of Python in This Course</p>
-                </div>
+    <div class="grid-section-curses">
+      <div class="gallery-images-curses"
+        onclick="openModal('Java', 'Learn The Basics of Java in This Course and its Foundation and more')">
+        <img src="images/java.png" alt="Java" />
+        <h4>Java</h4>
+        <p>Learn The Basics of Java in This Course</p>
+      </div>
 
-                <div class="gallery-images-curses" onclick="openModal('HTML/CSS', 'Learn The Basics of HTML/CSS in This Course and its Foundation and more')">
-                    <img src="images/imagehtml.png" alt="Random Image" />
-                    <h4>HTML/CSS</h4>
-                    <p>Learn The Basics of HTML/CSS in This Course</p>
-                </div>
+      <div class="gallery-images-curses"
+        onclick="openModal('Python', 'Learn The Basics of Python in This Course and its Foundation and more')">
+        <img src="/images/image.png" alt="Python" />
+        <h4>Python</h4>
+        <p>Learn The Basics of Python in This Course</p>
+      </div>
 
-                <div class="gallery-images-curses"  onclick="openModal('JavaScript', 'Learn The Basics of JavaScript in This Course and its Foundation and more')">
-                    <img src="images/imagesjs.png" alt="Random Image" />
-                    <h4>JavaScript</h4>
-                    <p>Learn The Basics of JavaScript in This Course</p>
-                </div>
+      <div class="gallery-images-curses"
+        onclick="openModal('HTML/CSS', 'Learn The Basics of HTML/CSS in This Course and its Foundation and more')">
+        <img src="images/imagehtml.png" alt="HTML CSS" />
+        <h4>HTML/CSS</h4>
+        <p>Learn The Basics of HTML/CSS in This Course</p>
+      </div>
 
-                <div class="gallery-images-curses" onclick="openModal('C#', 'Learn The Basics of C# in This Course and its Foundation and more')">
-                    <img src="/images/csharp.png" alt="Random Image" />
-                    <h4>C#</h4>
-                    <p>Learn The Basics of C# in This Course</p>
-                </div>
+      <div class="gallery-images-curses"
+        onclick="openModal('JavaScript', 'Learn The Basics of JavaScript in This Course and its Foundation and more')">
+        <img src="images/imagesjs.png" alt="JavaScript" />
+        <h4>JavaScript</h4>
+        <p>Learn The Basics of JavaScript in This Course</p>
+      </div>
 
-                <div class="gallery-images-curses" onclick="openModal('IA', 'Learn The Basics of IA in This Course and its Foundation and more')">
-                    <img src="images/ia.png" alt="Random Image" />
-                    <h4>IA</h4>
-                    <p>Learn The Basics of IA in This Course and its Foundation</p>
-                </div>
+      <div class="gallery-images-curses"
+        onclick="openModal('csharp', 'Learn The Basics of C# in This Course and its Foundation and more')">
+        <img src="/images/csharp.png" alt="C#" />
+        <h4>C#</h4>
+        <p>Learn The Basics of C# in This Course</p>
+      </div>
 
-                <div class="gallery-images-curses" onclick="openModal('PHP', 'Learn The Basics of PHP in This Course and its Foundation and more')">
-                    <img src="images/php.png" alt="Random Image" />
-                    <h4>PHP</h4>
-                    <p>Learn The Basics of PHP in This Course</p>
-                </div>
+      <div class="gallery-images-curses"
+        onclick="openModal('IA', 'Learn The Basics of IA in This Course and its Foundation and more')">
+        <img src="images/ia.png" alt="IA" />
+        <h4>IA</h4>
+        <p>Learn The Basics of IA in This Course and its Foundation</p>
+      </div>
 
-                <div class="gallery-images-curses" onclick="openModal('MySQL', 'Learn The Basics of MySQL in This Course and its Foundation and more')">
-                    <img src="images/mysql.png" alt="Random Image" />
-                    <h4>MySQL</h4>
-                    <p>Learn The Basics of MySQL in This Course</p>
-                </div>
-                </div>  
+      <div class="gallery-images-curses"
+        onclick="openModal('PHP', 'Learn The Basics of PHP in This Course and its Foundation and more')">
+        <img src="images/php.png" alt="PHP" />
+        <h4>PHP</h4>
+        <p>Learn The Basics of PHP in This Course</p>
+      </div>
 
-                <!-- Modal -->
-<div id="modal" class="modal hidden">
-    <div class="modal-content">
+      <div class="gallery-images-curses"
+        onclick="openModal('MySQL', 'Learn The Basics of MySQL in This Course and its Foundation and more')">
+        <img src="images/mysql.png" alt="MySQL" />
+        <h4>MySQL</h4>
+        <p>Learn The Basics of MySQL in This Course</p>
+      </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modal-title">Course Title</h2>
         <p id="modal-description">Course description goes here.</p>
         <button onclick="startCourse()">Start Course</button>
+      </div>
     </div>
-</div>
   </section>
 
 
-  
+
   <p class="created-by"><a href="aboutCreators.html">Made with <span class="heart">❤</span> by <br>
       Angelo Medeiros 3xxxx8 <br> Lucas Neres 3xxxxx2 <br> Kayky Gueno 3160913</a></p>
-  
+
   <a class="back-to-top" role="button" aria-label="Back to top" title="Back to top" href="#curses"></a>
-    <script src="javascript/styles.js"> </script>
-  </body>
-  </html>
+  <script src="javascript/styles.js"> </script>
+</body>
+
+</html>
