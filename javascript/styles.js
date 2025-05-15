@@ -37,18 +37,32 @@ document.querySelectorAll('.faq-question').forEach(button => {
   });
 });
 
-function openModal(title, description, imageUrl) {
+function openModal(title, description) {
+  currentCourse = title.toLowerCase().replace(/[^a-z0-9]/gi, ""); // transforma "JavaScript" em "javascript"
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-description').textContent = description;
   document.getElementById('modal').classList.remove('hidden');
 }
 
-function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
+function startCourse() {
+  const courseLinks = {
+    "java": "java.html",
+    "python": "python.html",
+    "htmlcss": "html-css.html",
+    "javascript": "javascript.html",
+    "csharp": "csharp.html",
+    "ia": "ia.html",
+    "php": "php.html",
+    "mysql": "mysql.html"
+  };
+
+  const link = courseLinks[currentCourse];
+  if (link) {
+    window.location.href = link;
+  } else {
+    alert("Curso não encontrado para: " + currentCourse);
+  }
 }
 
-function startCourse() {
-  alert("Course started!");
-  closeModal();
-}
+
 
