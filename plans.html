@@ -88,7 +88,7 @@
                                     <li>Get an exclusive mentorship-backed project when you sign up!</li>
                                 </ul>
                                 <p>
-                                    <a class="saiba-mais" href="#" target="_blank" rel="noopener noreferrer">
+                                    <a class="saiba-mais" href="#">
                                         read more
                                     </a>
                                 </p>
@@ -104,15 +104,15 @@
 
                     </div>
 
-                    <button class="btn-continue">
-                        <span>Avançar</span>
+                    <button class="btn-continue" href="#card">
+                        Next
                     </button>
                 </div>
             </div>
 
 
-            <div class="login-container">
-                <button class="section-header">
+            <div id="card" class="login-container" >
+                <button class="card-header">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24"
                         stroke="currentColor" fill="none" color="#996DFF">
                         <path
@@ -122,11 +122,11 @@
                             d="M17.5 10.0001H9.16669M17.5 10.0001C17.5 9.41658 15.8381 8.32636 15.4167 7.91675M17.5 10.0001C17.5 10.5836 15.8381 11.6738 15.4167 12.0834"
                             stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
-                    <h5>Identificação</h5>
+                    <h5>Identification</h5>
                 </button>
 
                 <div class="login-box">
-                    <h2>Insira seu e-mail</h2>
+                    <h2>Insert your e-mail</h2>
                     <form>
                         <div class="input-group">
                             <span class="input-icon">
@@ -142,14 +142,13 @@
                             </span>
                             <input type="email" name="email" placeholder="E-mail" required />
                         </div>
-                        <button type="submit" class="btn-continue">Avançar</button>
+                        <button type="submit" class="btn-continue" href="#pay">Next</button>
                     </form>
 
                     <div class="login-divider">
-                        <span>Ou entre com</span>
+                        <span>or enter with</span>
                         <button class="social-button">
                             <i>
-                                <!-- GitHub logo -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20"
                                     fill="currentColor">
                                     <path
@@ -161,31 +160,54 @@
                     </div>
 
                     <div class="secure-info">
-                        <img src="/assets/icons/checkout/shield.svg" alt="Informações seguras" />
-                        Suas informações estão seguras
+                        * Your information is safe
                     </div>
 
                     <footer class="login-footer">
-                        <a href="https://rocketseat.com.br/terms" target="_blank" rel="noopener noreferrer">Termos de
-                            Uso</a>
-                        <span>·</span>
-                        <a href="https://rocketseat.com.br/privacy" target="_blank" rel="noopener noreferrer">Política
-                            de Privacidade</a>
+                        <a href="support.html" target="_blank">Terms of Use · Privacy
+                            Policy
+                        </a>
                     </footer>
                 </div>
             </div>
-            <h2 style="margin-top:2rem">Detalhes de Pagamento</h2>
-            <div class="form-group">
-                <label for="cartao">Número do Cartão</label>
-                <input type="text" id="cartao" placeholder="0000 0000 0000 0000" />
-            </div>
-            <div class="form-group">
-                <label for="validade">Validade</label>
-                <input type="text" id="validade" placeholder="MM/AA" />
-            </div>
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" placeholder="123" />
+            <div class="login-container">
+                <button class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24"
+                        stroke="currentColor" fill="none" color="#996DFF">
+                        <path
+                            d="M1.66666 9.99998C1.66666 7.05208 1.66666 5.57812 2.54399 4.59406C2.68431 4.43667 2.83897 4.2911 3.00621 4.15904C4.05176 3.33331 5.61784 3.33331 8.74999 3.33331H11.25C14.3822 3.33331 15.9482 3.33331 16.9937 4.15904C17.161 4.2911 17.3157 4.43667 17.456 4.59406C18.3333 5.57812 18.3333 7.05208 18.3333 9.99998C18.3333 12.9479 18.3333 14.4218 17.456 15.4059C17.3157 15.5633 17.161 15.7088 16.9937 15.8409C15.9482 16.6666 14.3822 16.6666 11.25 16.6666H8.74999C5.61784 16.6666 4.05176 16.6666 3.00621 15.8409C2.83897 15.7088 2.68431 15.5633 2.54399 15.4059C1.66666 14.4218 1.66666 12.9479 1.66666 9.99998Z"
+                            stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8.33334 13.3333H9.58334" stroke-width="1.25" stroke-miterlimit="10"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.0833 13.3333H15" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M1.66666 7.5H18.3333" stroke-width="1.25" stroke-linejoin="round"></path>
+                    </svg>
+                    <h5>Card Informations</h5>
+                </button>
+
+                <div id="pay" class="payment-box">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" id="cardName" placeholder="Name on Card" required />
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" id="cardNumber" placeholder="Card number" required />
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <input type="text" id="expiry" placeholder="Expiry date" required />
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="cvv" placeholder="CVV" required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-continue">Start Paid Membership</button>
+                    </form>
+                </div>
             </div>
         </div>
 
