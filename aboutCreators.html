@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creators</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punch 2 Learn - Creators</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <link rel="stylesheet" href="CSS/style.css">
+  
 </head>
 <body>
-    <h1>
-        Creators
-    </h1>
+
+    <header>
+        <label class="not-visible" for="close-menu">Close Menu</label>
+        <input class="close-menu" type="checkbox" id="close-menu" role="button" aria-label="Close Menu">
     
+        <aside class="menu">
+          <div>
+            <h1 class="logo">
+              <a onclick="getElementById('close-menu').checked = false;" href="home.html">
+                <img class="logoimg" src="images/logotest.png">
+              </a>
+            </h1>
+            <nav>
+              <ul onclick="getElementById('close-menu').checked = false;">
+                <li>
+                  <a href="curses.html">Courses</a>
+                </li>
+                <li>
+                  <a href="support.html">Support</a>
+                </li>
+                <li>
+                  <a href="aboutCreators.html">About us</a>
+                </li>
+                <li>
+                  <a href="aboutTeachers.html">Teachers</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      </header>
+  <section class="intro">
+    </section>
+
+  <section id ="aboutCreators" class="creators-container">
+    <div class="creator-card">
+      <h2 class="creator-name">Kayky Gueno</h2>
+      <p class="creator-description">
+        A curious mind with a strong interest in software development and AI. Kayky enjoys turning ideas into reality through code and is always exploring innovative solutions.
+      </p>
+      <div class="creator-image">
+        <img src="images/kayky.png" alt="Kayky Gueno">
+      </div>
+    </div>
+
+    <div class="creator-card">
+      <h2 class="creator-name">Lucas Neres</h2>
+      <p class="creator-description">
+        A computing science enthusiast with a passion for problem-solving, systems design, and learning new technologies. Lucas is committed to making technology accessible and impactful.
+      </p>
+      <div class="creator-image">
+        <img src="images/lucas.jpeg" alt="Lucas Neres">
+      </div>
+    </div>
+
+    <div class="creator-card">
+      <h2 class="creator-name">Angelo Macedo</h2>
+      <p class="creator-description">
+        Focused on software engineering and digital creativity, Angelo blends technical skills with innovation to build modern, user-friendly applications and solutions.
+      </p>
+      <div class="creator-image">
+        <img src="images/angelindo.jpeg" alt="Angelo Macedo">
+      </div>
+    </div>
+  </section>
+
+ <p class="created-by"><a href="aboutCreators.html">Made with <span class="heart">❤</span> by <br>
+      Angelo Medeiros 3xxxx8 <br> Lucas Neres 3xxxxx2 <br> Kayky Gueno 3160913</a></p>
+
+  <a class="back-to-top" role="button" aria-label="Back to top" title="Back to top" href="#aboutCreators"></a>
+  <script src="javascript/styles.js"> </script>
 </body>
 </html>

@@ -308,6 +308,17 @@ ul{display: flex;
     display: none;
   }
   
+  .logoimg {
+    cursor: pointer;
+    position: relative;
+    z-index: 9999 !important; /* Força acima de outros elementos */
+  }
+  
+  .logo a {
+    pointer-events: auto !important; /* Anula qualquer bloqueio */
+    display: inline-block; /* Garante comportamento de link */
+  }
+  
 
   /* ----------------------------------- Back to home ----------------------------------- */
   .back-to-top {
@@ -485,6 +496,79 @@ ul{display: flex;
 }
 
 /* ----------------------------------- Estilos da Página Teacher ----------------------------------- */
+
+/* Estilo para centralizar e estilizar o conteúdo da container */
+.container {
+  display: flex; /* Define um layout flexível */
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: center; /* Centraliza os elementos verticalmente */
+  text-align: center; /* Centraliza o texto */
+  padding: 2rem; /* Adiciona espaçamento interno */
+  width: 100%;
+  margin: 0 auto; /* Centraliza horizontalmente na página */
+}
+
+/* ... (mantenha todo o CSS anterior até a linha 564) ... */
+
+/* =============== NOVOS ESTILOS PARA SESSÕES =============== */
+.prof-sections {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+}
+
+.prof-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.prof-section.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#prof1 { background-image: url(images/prof1.jpg); }
+#prof2 { background-image: url(images/prof2.jpg); }
+#prof3 { background-image: url(images/prof3.jpg); }
+#prof4 { background-image: url(images/prof4.jpg); }
+#prof5 { background-image: url(images/prof5.jpg); }
+
+.prof-content {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(50%);
+  transform: translatex(-100%);
+  width: 40%;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-left: 4px solid #a2ff30;
+  backdrop-filter: blur(5px);
+}
+
+.prof-content h2 {
+  color: #a2ff30;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.prof-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* ... (mantenha o restante do CSS existente) ... */
+
 /* Menu lateral */
 .sidebar {
   position: fixed;
@@ -552,6 +636,24 @@ ul{display: flex;
   pointer-events: auto; /* Permite que o botão receba cliques */
 }
 
+.menuHamburger {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 45vw;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.menuHamburger.open {
+  left: 0;
+}
+
 .image-area {
   position: fixed; /* Fixa a área de imagem na tela */
   top: 0;
@@ -571,8 +673,20 @@ ul{display: flex;
   object-fit:fill; /* Garante que a imagem preencha sem distorção */
   transition: transform 0.3s ease; /* Adiciona uma transição suave ao redimensionar */
   pointer-events: auto; /* Permite interação apenas com a imagem */
+  position: relative; /* Define a posição relativa */
+  z-index: 1; /* Garante que a imagem fique atrás da prof-card */
 }
 
+/* Estilo específico para a imagem padrão */
+
+
+/* Quando o menu está fechado, a imagem ocupa 100% da tela */
+.image-area.fullscreen img {
+  width: 100vw; /* Ocupa 100% da largura da tela */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  object-fit: cover; /* Garante que a imagem preencha sem distorção */
+  transition: all 0.5s ease; /* Transição suave ao redimensionar */
+}
 .image-area.open {
   opacity: 1;
 }
@@ -664,5 +778,83 @@ ul{display: flex;
 
 .teacher-page .teacher-button a:hover {
   background-color: #8c00b3;
+}
+
+/* Oculta a div prof-card por padrão */
+.prof-card {
+  display: none;
+}
+/* Oculta todas as prof-cards por padrão */
+.prof-card {
+  display: none;
+}
+
+/* Mostra a div prof-card quando a classe "visible" é adicionada */
+.prof-card.visible {
+  display: block;
+}
+.prof-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 100px;
+}
+
+.prof-card {
+  background-color: rgba(56, 56, 56, 0.389);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative; /* Define a posição relativa para usar z-index */
+  z-index: 10; /* Garante que a prof-card fique acima de outros elementos */
+  background-color: rgba(255, 255, 255, 0.8); /* Adiciona um fundo semitransparente para melhor visibilidade */
+  padding: 1rem; /* Adiciona espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas para um visual mais agradável */
+}
+
+h2{
+    color: #a2ff30;
+  }
+
+
+  p{
+    color: white;
+    font-size: var(--font-xxsmall);
+    padding: 10px;
+    font-style: italic
+  }
+
+  .creator-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover; 
+  margin: 0 auto 20px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  }
+
+
+.prof-card:hover {
+  transform: translateY(-5px);
+}
+
+.prof-name {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Estilo do texto da prof-description */
+.prof-description {
+  position: relative; /* Garante que o texto siga o z-index da prof-card */
+  z-index: 30; /* Garante que o texto fique acima de tudo */
+  font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+  color: white; /* Garante que o texto seja visível */
+  text-align: center; /* Centraliza o texto */
+  padding: 1rem; /* Adiciona espaçamento interno */
 }
 /* ----------------------------------- Final dos Estilos da Página Teacher ----------------------------------- */
