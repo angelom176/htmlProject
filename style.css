@@ -308,7 +308,7 @@ ul{display: flex;
     display: none;
   }
   
-  .logoimg {
+  .logoimg { 
     cursor: pointer;
     position: relative;
     z-index: 9999 !important; /* Força acima de outros elementos */
@@ -517,6 +517,7 @@ ul{display: flex;
   overflow-y: scroll;
   height: 100vh;
   position: relative;
+  z-index: 50;
 }
 
 .prof-section {
@@ -534,6 +535,7 @@ ul{display: flex;
 .prof-section.active {
   opacity: 1;
   pointer-events: all;
+  z-index: 60;
 }
 
 #prof1 { background-image: url(images/prof1.jpg); }
@@ -665,6 +667,11 @@ ul{display: flex;
   align-items: center;
   z-index: 10; /* Garante que fique acima de outros elementos */
   pointer-events: none; /* Impede que a área bloqueie cliques */
+  display: none;
+}
+.sidebar.open ~ .image-area {
+  display: block;
+  z-index: 100;
 }
 
 .image-area img {
