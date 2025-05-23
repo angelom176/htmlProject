@@ -949,9 +949,8 @@ ul {
     grid-template-columns: 1fr;
     padding: 3rem;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    .coluna article > h3 {
+
+    .coluna article  h3 {
       position: relative;
       margin: 2rem 0 2rem 7rem;
       display: flex;
@@ -1117,10 +1116,7 @@ ul {
     border: none;
     cursor: pointer;
 }*/
-=======
 
-}
->>>>>>> refs/remotes/origin/main
 
 
 /* =================== curses.html Page =================== */
@@ -1140,11 +1136,10 @@ ul {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 0 2rem;
-=======
+  }
 
   .checkout-container {
     flex-direction: column;
->>>>>>> b3f9602a2de164f2fdddc57a72035184967900b2
   }
 
   .summary {
@@ -1152,7 +1147,6 @@ ul {
     order: 3;
     margin-top: 2rem;
   }
-
 }
   /* =================== curses.html Page =================== */
 
@@ -1939,5 +1933,6 @@ ul {
 
 .teacher-page .teacher-button a:hover {
   background-color: #8c00b3;
+}
 }
 /* ----------------------------------- Final dos Estilos da Página Teacher ----------------------------------- */
